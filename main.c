@@ -31,7 +31,16 @@ int main() {
         getchar();
 
         clock_t BEGIN = clock();
+        /** 
+         * Simple primality rules. 1 is not a prime, 
+         * 2 and 3 are primes, 
+         * all other primes follow the expression  6k (+/-) 1
+         **/
         IS_PRIME = NUMBER != 1 && (NUMBER <= 3 || (NUMBER % 6 == 1 || NUMBER % 6 == 5));
+
+        /**
+         * Looping math with 6k (+/-) 1 logic to speed up algo.
+         **/
         if (IS_PRIME)  {
             unsigned short MODE = 0;
             for (LOOP = 3; LOOP <= big_sqrt(NUMBER);) {
